@@ -81,22 +81,22 @@
  */
 - (NSString*)packElementWhenLengthIsFlexible:(NSString*)DomainContent{
     //1. define a string ,padding with "0"
-    NSMutableString *String = [[NSMutableString alloc] init];
+    NSMutableString *string = [[NSMutableString alloc] init];
     for (int i = 0; i < self.ocupyMaxLen; i++) {
-        [String appendString:@"0"];
+        [string appendString:@"0"];
     }
     //2. pad the String with DomainContent according to "isLeft"
     if (self.isLeftPadding == 1)
-        [String replaceCharactersInRange:NSMakeRange(0, [DomainContent length]) withString:DomainContent];
+        [string replaceCharactersInRange:NSMakeRange(0, [DomainContent length]) withString:DomainContent];
     else
-        [String replaceCharactersInRange:NSMakeRange([String length]-[DomainContent length], [DomainContent length]) withString:DomainContent];
+        [string replaceCharactersInRange:NSMakeRange([string length]-[DomainContent length], [DomainContent length]) withString:DomainContent];
     //3. 根据BCD,BINARY/ASCII返回数据
     if ([self.data_type isEqualToString:BCD] || [self.data_type isEqualToString:BINARY]){
         self.setBitMapBlk();//执行回调，对应位置位
-        return String;
+        return string;
     } else if ([self.data_type isEqualToString: ASCII]) {
         self.setBitMapBlk();//执行回调，对应位置位
-        return [NSString hexToAsc:String];
+        return [NSString hexToAsc:string];
     } else
         return @"不接收的数据类型\n";
 }

@@ -10,8 +10,7 @@
 
 @implementation NSString (Trans)
 
-+(NSData*)hexToBytes:(NSString *)str{
-    
++(NSData*)hexToBytes:(NSString *)str {
     NSMutableData* data = [NSMutableData data];
     
     int idx;
@@ -57,12 +56,11 @@
  *  @return 转码后的ASC字符串
  */
 + (NSString *)hexToAsc:(NSString *)hex{
+    hex = hex.uppercaseString;
     char szData[1024]={0};
     const char *pBytes =  [hex UTF8String];
-    if(NULL != pBytes)
-    {
-        for(int i=0; i<hex.length; i++)
-        {
+    if(NULL != pBytes) {
+        for(int i=0; i<hex.length; i++) {
             char tmp[16];
             sprintf(tmp, "%0.2X",pBytes[i]);
             strcat(szData, tmp);
@@ -90,10 +88,8 @@
     return nil;
 }
 
-+ (void)ascToHex:(const char *)hex len:(NSUInteger)length outAscii:(char *)ascii
-{
-    for (int i = 0; i < length; i += 2)
-    {
++ (void)ascToHex:(const char *)hex len:(NSUInteger)length outAscii:(char *)ascii {
+    for (int i = 0; i < length; i += 2) {
         if (hex[i] >= '0' && hex[i] <= '9')
             ascii[i / 2] = (hex[i] - '0') << 4;
         else if (hex[i] >= 'a' && hex[i] <= 'z')
@@ -117,8 +113,8 @@
  *
  *  @return 二进制字符串
  */
-+(NSString *)HexToBinary:(NSString *)hex
-{
++(NSString *)HexToBinary:(NSString *)hex {
+    hex = hex.uppercaseString;
     NSMutableDictionary *hexDic = [[NSMutableDictionary alloc] init];
     hexDic = [[NSMutableDictionary alloc] initWithCapacity:16];
     [hexDic setObject:@"0000" forKey:@"0"];
@@ -152,8 +148,7 @@
  *
  *  @return 16进制字符串
  */
-+(NSString *)BinaryToHex:(NSString *)Binary
-{
++(NSString *)BinaryToHex:(NSString *)Binary {
     if ([Binary length]%4 == 0) {
         NSMutableDictionary *hexDic = [[NSMutableDictionary alloc] init];
         hexDic = [[NSMutableDictionary alloc] initWithCapacity:16];

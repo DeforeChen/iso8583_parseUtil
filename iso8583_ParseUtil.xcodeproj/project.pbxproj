@@ -78,9 +78,7 @@
 				8963A0D31E790E3C00B15626 /* ViewController.h */,
 				8963A0D41E790E3C00B15626 /* ViewController.m */,
 				8963A0D61E790E3C00B15626 /* Main.storyboard */,
-				8963A1021E7A430400B15626 /* domainLUT */,
-				8963A0F11E792EE800B15626 /* category */,
-				8963A0ED1E79291100B15626 /* util */,
+				8963A1031E7A43FE00B15626 /* util */,
 				8963A0D91E790E3C00B15626 /* Assets.xcassets */,
 				8963A0DB1E790E3C00B15626 /* LaunchScreen.storyboard */,
 				8963A0DE1E790E3C00B15626 /* Info.plist */,
@@ -97,7 +95,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8963A0ED1E79291100B15626 /* util */ = {
+		8963A0ED1E79291100B15626 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				8963A0E71E79290A00B15626 /* ISO8583_BITMAP.h */,
@@ -108,7 +106,7 @@
 				8963A0E41E790F2900B15626 /* ISO8583_ParseUtil.h */,
 				8963A0E51E790F2900B15626 /* ISO8583_ParseUtil.m */,
 			);
-			name = util;
+			name = model;
 			sourceTree = "<group>";
 		};
 		8963A0F11E792EE800B15626 /* category */ = {
@@ -126,6 +124,16 @@
 				8963A0FD1E79908800B15626 /* DomainLUT.json */,
 			);
 			name = domainLUT;
+			sourceTree = "<group>";
+		};
+		8963A1031E7A43FE00B15626 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				8963A1021E7A430400B15626 /* domainLUT */,
+				8963A0F11E792EE800B15626 /* category */,
+				8963A0ED1E79291100B15626 /* model */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -23,7 +23,6 @@
  ---------------------------------------
 */
 
-
 /**
  添加8583域
 
@@ -33,17 +32,17 @@
 -(void)appendDomain:(NSString*)domainName
       DomainContent:(NSString*)content;
 
-
 /**
  结束域添加
  */
 -(void)finishAppendingDomain;
 
-
 /**
  打包8583包
-
  @return 返回打包好的8583包字符串(明文)
  */
 -(NSString*)packISO8583Data;
+
+
+-(NSArray*)unpackageISO8583Message:(NSString*)sourceDataOfISO8583Msg;
 @end
