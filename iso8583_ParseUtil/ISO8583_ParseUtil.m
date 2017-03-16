@@ -31,7 +31,6 @@
         NSString *path = [[NSBundle mainBundle] pathForResource:@"DomainLUT" ofType:@"json"];
         NSData *jsonData = [NSData dataWithContentsOfFile:path options:NSDataReadingMappedIfSafe error:nil];
         util.domainLUT = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"domain LUT = %@",util.domainLUT);
     }
     return util;
 }
